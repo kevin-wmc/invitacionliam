@@ -7,45 +7,31 @@
 
 <style>
 
-/* fondo */
 body{
     margin:0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgb(146,124,102);
+
+    /* imagen de fondo */
+    background-image: url("fondocarta.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
     overflow:hidden;
-    position:relative;
-    height: 615px;
-    width: 370px;
-}
-
-/* imagen de fondo */
-.fondo1 img{
-    position:absolute;
-    width: 615px;
-    height: 370px;
-    object-fit:cover;
-    top:0;
-    left:0;
 }
 
 /* carta */
 #carta{
-    position:absolute;
-    bottom:120px;
-    left:50%;
-    transform:translateX(-50%);
     animation:flotar 8s ease-in-out infinite alternate;
-    align-items: center; 
-    justify-content: center;
 }
 
 @keyframes flotar{
-    from{ transform:translateX(-50%) translateY(0); }
-    to{ transform:translateX(-50%) translateY(-7px); }
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-7px); }
 }
 
 </style>
@@ -53,36 +39,11 @@ body{
 
 <body>
 
-<figure class="fondo1">
-<img src="fondocarta.png" alt="fondo">
-</figure>
-
 <div id="carta">
 <a href="invitacion.html">
-<figure>
 <img src="cartaclick.jpg" width="330" alt="gpi">
-</figure>
 </a>
 </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
