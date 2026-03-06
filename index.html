@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>carta de invitacion</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carta de invitacion</title>
 <style>
-
-body{
-    margin:0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* imagen de fondo */
-    background-image: url("fondocarta.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    /*fondo y posicion*/
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        background: rgb(146, 124, 102);
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #globo{
+        position: absolute;
+    bottom:-150px;
+    left:49%;
+    transform:translateX(-50%);
+    width:0px;
+    height:910px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: flotar 8s ease-in-out infinite alternate;
     display:flex;
-    justify-content:center;
     align-items:center;
-    height:100vh;
-    overflow:hidden;
-}
-
-/* carta */
-#carta{
-    animation:flotar 8s ease-in-out infinite alternate;
-}
+    justify-content:center;
+    }
 
 @keyframes flotar{
-    from{ transform:translateY(0); }
-    to{ transform:translateY(-7px); }
+    from{ transform:translateX(-50%) translateY(0); }
+    to{ transform:translateX(-50%) translateY(-7px); }
 }
 
 </style>
 </head>
-
 <body>
-
-<div id="carta">
-<a href="invitacion.html">
-<img src="cartaclick.jpg" width="330" alt="gpi">
-</a>
+    <figure class="fondo1">
+        <img src="fondocarta.png" height= "633px" width= "490px" alt="fondo">
+    </figure>
+<div id="textosup">
+    <h1></h1>
+</div>
+<div id="globo">
+    <a href="invitacion.html">
+    <figure>
+        <img src="cartaclick.jpg" height="180px" width="320" alt="gpi">
+    </figure>
+    </a>
 </div>
 
 </body>
