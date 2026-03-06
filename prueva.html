@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #a2ddff, #c6faae);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: aparecer 1.5s ease;
+    max-width: 400px;
+}
+
+h1 {
+    color: #66ff40;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4081;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e91e63;
+}
+
+#countdown {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+@keyframes aparecer {
+    from {opacity: 0; transform: scale(0.7);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: -10px;
+    animation: caer 3s linear infinite;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🎉 ¡Estás Invitado! 🎉</h1>
+    <p>Ven a celebrar mi cumpleaños 🥳</p>
+    <p><strong>Fecha:</strong> 10 de Marzo</p>
+    <p><strong>Hora:</strong> 6:00 PM</p>
+    <p><strong>Lugar:</strong> Mi Casa 🏠</p>
+
+    <div id="countdown"></div>
+
+    <button onclick="confirmar()">Confirmar Asistencia</button>
+    <button onclick="lanzarConfetti()">🎊 Celebrar</button>
+</div>
+
+<script>
+// Cuenta regresiva
+const fechaEvento = new Date("March 10, 2026 18:00:00").getTime();
+
+setInterval(() => {
+    const ahora = new Date().getTime();
+    const diferencia = fechaEvento - ahora;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+        "Faltan " + dias + " días, " + horas + " horas y " + minutos + " minutos 🎂";
+}, 1000);
+
+// Confirmación
+function confirmar() {
+    alert("🎉 ¡Gracias por confirmar! Nos vemos en la fiesta 🥳");
+}
+
+// Confetti
+function lanzarConfetti() {
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = 
+            `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+</script>
+
+</body>
+</html>
