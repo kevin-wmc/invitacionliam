@@ -1,59 +1,36 @@
+Perfecto, te preparo un código base en HTML y CSS para que tengas tu página lista. Solo tendrás que reemplazar las rutas de las imágenes por las tuyas (la de fondo y la de la carta). Aquí va un ejemplo sencillo y adaptable:
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carta de invitacion</title>
-<style>
-    /*fondo y posicion*/
+  <meta charset="UTF-8">
+  <title>Invitación</title>
+  <style>
     body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        background: rgb(146, 124, 102);
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        overflow: hidden;
-    }
-    
-    #globo{
-        position: absolute;
-    bottom:-150px;
-    left:49%;
-    transform:translateX(-50%);
-    width:0px;
-    height:910px;
-    border-radius: 50%;
-    cursor: pointer;
-    animation: flotar 8s ease-in-out infinite alternate;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('fondo.jpg'); /* Aquí va tu imagen de fondo */
+      background-size: cover;
+      background-position: center;
     }
 
-@keyframes flotar{
-    from{ transform:translateX(-50%) translateY(0); }
-    to{ transform:translateX(-50%) translateY(-7px); }
-}
+    .carta {
+      width: 300px; /* Ajusta el tamaño según necesites */
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-</style>
+    .carta:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <figure class="fondo1">
-        <img src="fondocarta.png" height= "633px" width= "490px" alt="fondo">
-    </figure>
-<div id="textosup">
-    <h1></h1>
-</div>
-<div id="globo">
-    <a href="invitacion.html">
-    <figure>
-        <img src="cartaclick.jpg" height="180px" width="320" alt="gpi">
-    </figure>
-    </a>
-</div>
-
+  <a href="invitacion.html"> <!-- Aquí enlazas tu invitación -->
+    <img src="cartaclick.jpg" alt="Abrir invitación" class="carta"> <!-- Aquí va tu imagen de la carta -->
+  </a>
 </body>
 </html>
