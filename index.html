@@ -11,13 +11,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url('fondocarta.png'); /* Aquí va tu imagen de fondo */
+      background-image: url('fondocarta.png'); /* tu imagen de fondo */
       background-size: cover;
       background-position: center;
     }
 
     .carta {
-      width: 300px; /* Ajusta el tamaño según necesites */
+      width: 60%; /* más pequeño para que se vea el fondo */
+      max-width: 300px; /* límite en pantallas grandes */
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -25,11 +26,18 @@
     .carta:hover {
       transform: scale(1.05);
     }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 600px) {
+      .carta {
+        width: 70%; /* ocupa menos espacio en celular */
+      }
+    }
   </style>
 </head>
 <body>
-  <a href="invitacion.html"> <!-- Aquí enlazas tu invitación -->
-    <img src="cartaclick.jpg" alt="Abrir invitación" class="carta"> <!-- Aquí va tu imagen de la carta -->
+  <a href="invitacion.html"> <!-- tu enlace -->
+    <img src="cartaclick.jpg" alt="Abrir invitación" class="carta"> <!-- tu carta -->
   </a>
 </body>
 </html>
