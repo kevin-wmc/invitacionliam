@@ -10,7 +10,7 @@
 
     <style>
         body{
-            background: rgb(92, 177, 177);
+              background: rgb(255, 255, 255);
         }
         #arriba{
              margin: 0%;
@@ -20,8 +20,9 @@
              height: 96vh;
              text-align: center;
              overflow: hidden;
-             height: 160px;
+             height: 139px;
              width: 370px;
+               background: rgb(255, 255, 255);
         }
         #medio{
             margin: 0%;
@@ -32,7 +33,8 @@
              text-align: center;
              overflow: hidden;
              width: 370px;
-             height: 595px;
+             height: 435px;
+               background: rgb(255, 255, 255);
         }
         #abajo{
             margin: 0%;
@@ -42,12 +44,8 @@
              height: 96vh;
              text-align: center;
              overflow: hidden;
-             height: 420px;
-             font-family: "Playpen Sans Thai", cursive;
-      font-weight: 700;
-      font-size: 12px;
-      color: rgb(0, 0, 0);
-      text-shadow: 2px 2px 5px rgb(255, 255, 255);
+             width: 370px;
+            
         }
         #papas{
             margin: 0%;
@@ -57,31 +55,158 @@
              height: 96vh;
              text-align: center;
              overflow: hidden;
-             height: 610px;
+             height: 596px;
              width: 370px;
         }
+        #regresiva{
+            margin: 0%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 96vh;
+             text-align: center;
+             overflow: hidden;
+             width: 370px;
+             height: 150px;
+        }
+        .countdown {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+      gap: 1rem;
+      flex-direction: column;
+    }
+    #miss{
+        margin: 0%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 96vh;
+             text-align: center;
+             overflow: hidden;
+             width: 370px;
+             height: 450px;
+    }
+    #espe{
+        margin: 0%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 96vh;
+             text-align: center;
+             overflow: hidden;
+             width: 370px;
+             height: 250px;
+    }
+    #mapaa{
+        margin: 0%;
+        margin-left: 35%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 96vh;
+             text-align: center;
+             overflow: hidden;
+             width: 100px;
+             height: 100px;
+    }
+    #guia{
+        margin: 0%;
+        display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 96vh;
+             text-align: center;
+             overflow: hidden;
+             height: 0%;
+    }
+
+    #conteo{
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            text-align: center;
+            font-family: "Playpen Sans Thai", cursive;
+    }
+
+    .cuentaatras {
+            display: flex;
+            gap: 1rem;
+        }
+        .grupo {
+            line-height: 1;
+        }
+        .grande {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        .fecha span {
+            font-weight: 600;
+        }
+    
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      text-align: center;
+    }
+
+    .column img {
+      width: 100%;
+      max-width: 200px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .column img:hover {
+      transform: scale(1.05);
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+      display: none;
+      text-align: left;
+    }
+
+    .info.active {
+      display: block;
+      animation: slideDown 0.4s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     </style>
 </head>
 <body>
     <div id="arriba">
         <figure class="cabeza">
-            <img src="palomas.png" height="153" width="370px" alt="1">
+            <img src="palomas2.png" height="165px" width="490px" alt="1">
         </figure>
     </div>
 
     <div id="medio">
         <figure class="cuerpo">
-            <img src="liammm.png" height="600px" width="480px" alt="2">
+            <img src="liammm.png" height="480px" width="370px" alt="2">
         </figure>
     </div>
 
     <div id="abajo">
-        <h1 style="display: flex; justify-content: center; text-align: justify; width: 1080px;">
-            
-            
-            hola me llamo Liam Alexander y te invito a acompañarme el dia 30 de mayo, para celebrar un dia para dar gracias por mi vida y recibir la bendicion del señor. 
-            "con el agua del bautizmo, escribes el primer capitulo de una vida llena de fe y alegria"
-        </h1>
+        <figure>
+            <img src="presentacionn.jpg" width="370px" alt="3">
+        </figure>
     </div>
 
     <div id="papas">
@@ -89,5 +214,159 @@
             <img src="papis.jpg" alt="gg" height="600px" width="370px">
         </figure>
     </div>
+    <div id="regresiva">
+        <figure>
+            <img src="cuenreg.png" width="370px" alt="cuenta">
+        </figure>
+    </div>
+
+    <div id="conteo">
+        <div class="fecha">
+        <p>¿Cuánto falta para el evento <span id="fecha">30/05/2026</span>?</p>
+    </div>
+    <div class="cuentaatras">
+        <div class="grupo">
+            <p class="grande" id="dias">00</p>
+            <p class="chico">días</p>
+        </div>
+        <div class="grupo">
+            <p class="grande" id="horas">00</p>
+            <p class="chico">horas</p>
+        </div>
+        <div class="grupo">
+            <p class="grande" id="minutos">00</p>
+            <p class="chico">minutos</p>
+        </div>
+        <div class="grupo">
+            <p class="grande" id="segundos">00</p>
+            <p class="chico">segundos</p>
+        </div>
+    </div>
+
+    <script>
+        let fecha = new Date("May 30, 2026 11:00:00"); // usar minúscula
+        let msFecha = fecha.getTime();
+
+        let parrafoDias = document.querySelector("#dias");
+        let parrafoHoras = document.querySelector("#horas");
+        let parrafoMinutos = document.querySelector("#minutos");
+        let parrafoSegundos = document.querySelector("#segundos");
+        let spanFecha = document.querySelector("#fecha");
+
+        spanFecha.innerText = fecha.toLocaleDateString();
+
+        let intervalo = setInterval(() => {
+            let hoy = new Date().getTime();
+            let distancia = msFecha - hoy;
+
+            let msPorDia = 1000 * 60 * 60 * 24;
+            let msPorHora = 1000 * 60 * 60;
+            let msPorMinuto = 1000 * 60;
+            let msPorSegundo = 1000;
+
+            let dias = Math.floor(distancia / msPorDia);
+            let horas = Math.floor((distancia % msPorDia) / msPorHora);
+            let minutos = Math.floor((distancia % msPorHora) / msPorMinuto);
+            let segundos = Math.floor((distancia % msPorMinuto) / msPorSegundo);
+
+            parrafoDias.innerText = dias;
+            parrafoHoras.innerText = horas < 10 ? "0" + horas : horas;
+            parrafoMinutos.innerText = minutos < 10 ? "0" + minutos : minutos;
+            parrafoSegundos.innerText = segundos < 10 ? "0" + segundos : segundos;
+            
+            if(distancia < 0){
+                clearInterval(intervalo);
+            }
+        }, 1000);
+    </script>
+    </div>
+   
+  <div id="miss">
+    <figure>
+        <img src="misa.png" width="370px" alt="5">
+    </figure>
+  </div>
+  <div class="timeline">
+    <!-- Columna 1 -->
+    <div class="column">
+      <img src="misa1.png" alt="Evento 1" onclick="showInfo(1)">
+      <div id="info1" class="info">
+        <h2>misa</h2>
+        <p>11 a.m
+          parroquia
+          San
+          Agustin
+        </p>
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="column">
+      <img src="gloww1.png" alt="Evento 2" onclick="showInfo(2)">
+      <div id="info2" class="info">
+        <h2>fiesta</h2>
+        <p>1 p.m
+          calle
+          15 norte #7
+        </p>
+      </div>
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="column">
+      <img src="comida1.png" alt="Evento 3" onclick="showInfo(3)">
+      <div id="info3" class="info">
+        <h2>comida</h2>
+        <p>2 p.m
+          en adelante
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showInfo(num) {
+      // Ocultar todas las secciones de info
+      document.querySelectorAll('.info').forEach(div => div.classList.remove('active'));
+      // Mostrar solo la seleccionada
+      document.getElementById('info' + num).classList.add('active');
+    }
+  </script>
+  <script>
+  function showInfo(num) {
+    // Ocultar todas las secciones de info
+    document.querySelectorAll('.info').forEach(div => div.classList.remove('active'));
+    // Mostrar solo la seleccionada
+    document.getElementById('info' + num).classList.add('active');
+  }
+
+  // Detectar clic en cualquier parte del documento
+  document.addEventListener('click', function(event) {
+    // Verificar si el clic fue dentro de una imagen o dentro de una caja de info
+    if (!event.target.closest('.column img') && !event.target.closest('.info')) {
+      // Si no fue dentro, ocultar todas las cajas de info
+      document.querySelectorAll('.info').forEach(div => div.classList.remove('active'));
+    }
+  });
+</script>
+<div id="espe">
+    <figure>
+        <img src="espera.png" width="370px" height="" alt="">
+    </figure>
+</div>
+
+<div id="mapaa">
+    <a href="https://maps.app.goo.gl/bPSy6FxVo8PehiDf8">
+        <figure>
+        <img src="mapa.png" width="100px" alt="">
+    </figure>
+    </a>
+    
+</div>
+<div id="guia">
+    <figure>
+        <img src="indicacion.png" width="370px" alt="">
+    </figure>
+</div>
 </body>
 </html>
