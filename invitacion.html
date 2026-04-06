@@ -100,15 +100,15 @@
     }
     #mapaa{
         margin: 0%;
-        margin-left: 35%;
+        margin-left: 25%;
              display: flex;
              justify-content: center;
              align-items: center;
              height: 96vh;
              text-align: center;
              overflow: hidden;
-             width: 100px;
-             height: 100px;
+             width: 200px;
+             height: 200px;
     }
     #guia{
         margin: 0%;
@@ -130,6 +130,25 @@
             text-align: center;
             font-family: "Playpen Sans Thai", cursive;
     }
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      z-index: 999;
+    }
+    #overlay button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
 
     .cuentaatras {
             display: flex;
@@ -222,7 +241,7 @@
 
     <div id="conteo">
         <div class="fecha">
-        <p>¿Cuánto falta para el evento <span id="fecha">30/05/2026</span>?</p>
+        <p style="font-size: 22px;">¿Cuánto falta para el evento <span id="fecha">30/05/2026</span>?</p>
     </div>
     <div class="cuentaatras">
         <div class="grupo">
@@ -286,39 +305,50 @@
         <img src="misa.png" width="370px" alt="5">
     </figure>
   </div>
+  <div id="overlay">
+    <h2>AVISO</h2>
+    <p style="text-align: center;">PUEDES DAR CLIC A LAS IMAGENES QUE TENGAN ESTE SIMBOLO 👆</p>
+    <button onclick="cerrarOverlay()">Aceptar</button>
+  </div>
+
   <div class="timeline">
     <!-- Columna 1 -->
     <div class="column">
-      <img src="misa1.png" alt="Evento 1" onclick="showInfo(1)">
+      <img src="clic1.png" alt="Evento 1" onclick="showInfo(1)">
       <div id="info1" class="info">
-        <h2>misa</h2>
-        <p>11 a.m
-          parroquia
-          San
-          Agustin
+        <h2 style="text-align: center; font-size: 29px;">misa</h2>
+        <p style="text-align: justify; font-weight: 600;">
+            DE 11 DE LA MAÑANA A LAS 12 DEL MEDIO DIA EN LA PARROQUIA SAN AGUSTIN OBISPO.
         </p>
+        <a href="https://www.google.com/maps/dir//Parroquia+San+Agust%C3%ADn,+Avenida+5+de+Mayo+1-Norte,+San+Agust%C3%ADn,+Centro,+74730+Chiautla+de+Tapia,+Pue./@18.3000963,-98.6142171,15.5z/data=!4m17!1m7!3m6!1s0x85cee721195d8023:0xaefa8c83f768a5bf!2sParroquia+San+Agust%C3%ADn!8m2!3d18.2982896!4d-98.6032374!16s%2Fg%2F1td_yyhs!4m8!1m0!1m5!1m1!1s0x85cee721195d8023:0xaefa8c83f768a5bf!2m2!1d-98.6032374!2d18.2982896!3e0?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D">
+            <p>¿Como llegar?</p>
+        </a>
+        
       </div>
     </div>
 
     <!-- Columna 2 -->
     <div class="column">
-      <img src="gloww1.png" alt="Evento 2" onclick="showInfo(2)">
+      <img src="clic2.png" alt="Evento 2" onclick="showInfo(2)">
       <div id="info2" class="info">
-        <h2>fiesta</h2>
-        <p>1 p.m
-          calle
-          15 norte #7
+        <h2 style="text-align: center; font-size: 29px;">fiesta</h2>
+        <p style="text-align: justify; font-weight: 600;">
+            DESPUES DE FINALIZAR LA MISA TODOS LOS QUE GUSTEN ACOMPAÑARNOS LOS ESPERAMOS EL LA CALLE 15 NORTE #7 A UN COSTADO DEL IMSS.
         </p>
+        <a href="https://maps.app.goo.gl/SGuy27qZazUq68xs7">
+            <p>¿Como llegar?</p>
+        </a>
+        
       </div>
     </div>
 
     <!-- Columna 3 -->
     <div class="column">
-      <img src="comida1.png" alt="Evento 3" onclick="showInfo(3)">
+      <img src="clic3.png" alt="Evento 3" onclick="showInfo(3)">
       <div id="info3" class="info">
-        <h2>comida</h2>
-        <p>2 p.m
-          en adelante
+        <h2 style="text-align: center; font-size: 29px;">comida</h2>
+        <p style="text-align: justify; font-weight: 600;">
+            A PARTIR DE LAS 2 DE LA TARDE EN ADELANTE SE COMPARTIRAN LOS ALIMENTOS.
         </p>
       </div>
     </div>
@@ -358,15 +388,16 @@
 <div id="mapaa">
     <a href="https://maps.app.goo.gl/bPSy6FxVo8PehiDf8">
         <figure>
-        <img src="mapa.png" width="100px" alt="">
+        <img src="clicmap.png" width="200px" height="200px" alt="">
     </figure>
     </a>
     
 </div>
-<div id="guia">
-    <figure>
-        <img src="indicacion.png" width="370px" alt="">
-    </figure>
-</div>
+<script>
+    function cerrarOverlay() {
+      document.getElementById("overlay").style.display = "none";
+    }
+
+</script>
 </body>
 </html>
